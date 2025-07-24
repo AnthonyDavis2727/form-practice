@@ -13,23 +13,27 @@ slider.oninput = function() {
 // Add another wurcom unit field set when button is clicked
 function addWurcomUnit() {
     // Get the existing fieldset and create a new fieldset element
-    let existingFieldset = document.querySelector("fieldset");
     let newFieldset = document.createElement("fieldset");
-    
+
+    // Get all existing fieldset elements and add one to the count
+    let fieldsets = document.querySelectorAll("fieldset");
+    let lastFieldset = fieldsets[fieldsets.length - 1];
+    let unitCount = fieldsets.length + 1;
+
     // Create a label and input for the new unit name
     let nameLabel = document.createElement("label");
-    nameLabel.textContent = "Wur-Com Name: ";
+    nameLabel.textContent = `Wur-Com Name #${unitCount}: `;
     let nameInput = document.createElement("input");
     nameInput.type = "text";
-    nameInput.name = "wurcom-unit";
+    nameInput.name = `wurcom_unit_${unitCount}`;
     nameInput.required = true;
 
     // Create a label and input for the new unit serial number
     let serialLabel = document.createElement("label");
-    serialLabel.textContent = " Wur-Com Serial Number: ";
+    serialLabel.textContent =  ` Wur-Com Serial Number #${unitCount}: `;
     let serialInput = document.createElement("input");
     serialInput.type = "text";
-    serialInput.name = "wurcom-serial";
+    serialInput.name = `wurcom_serial_${unitCount}`;
     serialInput.minLength = 8;
     serialInput.maxLength = 12;
     serialInput.required = true;
@@ -41,5 +45,13 @@ function addWurcomUnit() {
     newFieldset.appendChild(serialInput);
 
     // Append the new fieldset to the form
-    existingFieldset.insertAdjacentElement('afterend', newFieldset);
+    lastFieldset.insertAdjacentElement('afterend', newFieldset);
+}
+
+// Remove the last wurcom unit fieldset when button is clicked
+function removeWurcomUnit() {
+    let fieldsets = document.querySelectorAll("fieldset");
+    if (fieldsets.length > 1) {
+        fieldsets[fieldsets.length - 1].remove();
+    }
 }
