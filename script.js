@@ -22,7 +22,7 @@ function addWurcomUnit() {
 
     // Create a label and input for the new unit name
     let nameLabel = document.createElement("label");
-    nameLabel.textContent = `Wur-Com Name #${unitCount}: `;
+    nameLabel.textContent = `Wur-Com Name #${unitCount} *: `;
     let nameInput = document.createElement("input");
     nameInput.type = "text";
     nameInput.name = `wurcom_unit_${unitCount}`;
@@ -30,7 +30,7 @@ function addWurcomUnit() {
 
     // Create a label and input for the new unit serial number
     let serialLabel = document.createElement("label");
-    serialLabel.textContent =  ` Wur-Com Serial Number #${unitCount}: `;
+    serialLabel.textContent =  ` Wur-Com Serial Number #${unitCount} *: `;
     let serialInput = document.createElement("input");
     serialInput.type = "text";
     serialInput.name = `wurcom_serial_${unitCount}`;

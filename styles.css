@@ -23,7 +23,7 @@ header {
     margin-bottom: 10px;
 }
 
-.form-section, header {
+.form-section {
     background: #fff;
     margin-bottom: 10px;
     padding: 20px;
@@ -36,28 +36,27 @@ header {
     flex-direction: column;
 }
 
-.customer {
+.customer,
+.building,
+.monitoring {
     display: flex;
     flex-direction: column;
 }
 
-.customer-name,
-.customer-contact {
+.field-layout{
     display: flex;
     justify-content: center;
     flex-direction: row;
     gap: 2rem;
 }
 
-.customer-name > div, 
-.customer-contact > div {
+.field-layout > div {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.customer-name input[type="text"],
-.customer-contact input[type="text"] {
+.field-layout input[type="text"] {
     width: 100%;
 }
 
@@ -87,6 +86,8 @@ button {
     background: #5cb85c;
     color: #fff;
     border: none;
+    margin-top: 10px;
+    width: 125px;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
@@ -94,4 +95,11 @@ button {
 
 button:hover {
     background: #4cae4c;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
 }
