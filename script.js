@@ -40,7 +40,7 @@ function addWurcomUnit() {
     // Create a label and input for the new unit serial number
     let serialLabel = document.createElement("label");
     serialLabel.setAttribute("for", `wurcom_serial_${unitCount}`);
-    serialLabel.textContent =  ` Wur-Com Serial Number #${unitCount} *: `;
+    serialLabel.textContent =  ` Wur-Com Serial #${unitCount} *: `;
     let serialInput = document.createElement("input");
     serialInput.id = `wurcom_serial_${unitCount}`;
     serialInput.type = "text";

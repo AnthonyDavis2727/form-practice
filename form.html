@@ -17,13 +17,6 @@
 
     <form action="#" method="POST">
         <div class="form-section">
-            <h2>Configure Your Plan</h2>
-
-            <p>Select the number of car stations requiring service.</p>
-
-            <label for="plan-slider">Wur-Com Units</label>
-            <input type="range" id="plan-slider" name="plan-slider" min="1" max="10" value="1" required><span id="plan-value" readonly></span>
-
             <h2>Customer Information</h2>
             
             <div class="customer">
@@ -44,7 +37,7 @@
                     </div>
                     <div>
                         <label class="info-field" for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" minlength="10" maxlength="15" required>
                     </div>
                 </div>
                 <div>
@@ -148,7 +141,7 @@
                     </div>
                     <div>
                         <label for="monitoring_phone">Monitoring Service Phone Number *</label>
-                        <input type="number" id="monitoring_phone" name="monitoring_phone" required>
+                        <input type="number" id="monitoring_phone" name="monitoring_phone" minlength="10" maxlength="15" required>
                     </div>
                 </div>
             </div>
@@ -163,7 +156,7 @@
                     <input type="text" id="wurcom_unit_1" name="wurcom_unit_1" required>
                 </div>
                 <div>
-                    <label for="wurcom_serial_1">Wur-Com Serial Number #1 *</label>
+                    <label for="wurcom_serial_1">Wur-Com Serial #1 *</label>
                     <input type="text" id="wurcom_serial_1" name="wurcom_serial_1" minLength="8" maxLength="12" required>
                 </div>
             </fieldset>
@@ -174,10 +167,13 @@
             </div>
         </div>
 
-        <input type="checkbox" name="terms" id="terms" required>
-        <label for="terms">I accept the <a href="#">Terms and Conditions</a></label>
-
-        <button type="submit">Activate Unit(s)</button>
+        <div class="terms form-section">
+            <div>
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms">I accept the <a href="#">Terms and Conditions</a></label>
+            </div>
+            <button type="submit">Activate Unit(s)</button>
+        </div>
     </form>
 
     <script src="script.js"></script>
