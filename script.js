@@ -37,6 +37,56 @@ function addWurcomUnit() {
     nameInput.name = `wurcom_unit_${unitCount}`;
     nameInput.required = true;
 
+    // Create a label and select for the new unit location
+    let locationLabel = document.createElement("label");
+    locationLabel.setAttribute("for", `wurcom_location_${unitCount}`);
+    locationLabel.textContent = `Wur-Com Location #${unitCount} *: `;
+    let locationSelect = document.createElement("select");
+    locationSelect.id = `wurcom_location_${unitCount}`;
+    locationSelect.name = `wurcom_location_${unitCount}`;
+    locationSelect.required = true;
+
+    // Create options for the location select
+    let locationOption0 = document.createElement("option");
+    locationOption0.value = "Select Location";
+    locationOption0.textContent = "Select Location";
+    locationSelect.appendChild(locationOption0);
+
+    let LocationOption1 = document.createElement("option");
+    LocationOption1.value = "car_station";
+    LocationOption1.textContent = "Car Station";
+    locationSelect.appendChild(LocationOption1);
+
+    let locationOption2 = document.createElement("option");
+    locationOption2.value = "lobby";
+    locationOption2.textContent = "Lobby Station";
+    locationSelect.appendChild(locationOption2);
+
+    // Create a label and select for the new unit type
+    let typeLabel = document.createElement("label");
+    typeLabel.setAttribute("for", `wurcom_type_${unitCount}`);
+    typeLabel.textContent = `Wur-Com type #${unitCount} *: `;
+    let typeSelect = document.createElement("select");
+    typeSelect.id = `wurcom_type_${unitCount}`;
+    typeSelect.name = `wurcom_type_${unitCount}`;
+    typeSelect.required = true;
+
+    // Create options for the location select
+    let typeOption0 = document.createElement("option");
+    typeOption0.value = "Select Type";
+    typeOption0.textContent = "Select Type";
+    typeSelect.appendChild(typeOption0);
+
+    let typeOption1 = document.createElement("option");
+    typeOption1.value = "car_station";
+    typeOption1.textContent = "Car Station";
+    typeSelect.appendChild(typeOption1);
+
+    let typeOption2 = document.createElement("option");
+    typeOption2.value = "lobby";
+    typeOption2.textContent = "Lobby Station";
+    typeSelect.appendChild(typeOption2);
+
     // Create a label and input for the new unit serial number
     let serialLabel = document.createElement("label");
     serialLabel.setAttribute("for", `wurcom_serial_${unitCount}`);
@@ -52,8 +102,12 @@ function addWurcomUnit() {
     // Append the label and input to the fieldset
     newDiv1.appendChild(nameLabel);
     newDiv1.appendChild(nameInput);
+    newDiv1.appendChild(locationLabel);
+    newDiv1.appendChild(locationSelect);
     newDiv2.appendChild(serialLabel);
     newDiv2.appendChild(serialInput);
+    newDiv2.appendChild(typeLabel);
+    newDiv2.appendChild(typeSelect);
 
     // Append the new fieldset to the form
     lastFieldset.insertAdjacentElement('afterend', newFieldset);
