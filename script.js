@@ -1,15 +1,3 @@
-// Get the slider and output elements
-let slider = document.getElementById("plan-slider");
-let output = document.getElementById("plan-value");
-
-// Set the initial value of the output element when the page is loaded
-output.innerHTML = slider.value;
-
-// Updated the output value whenever the slider value changes
-slider.oninput = function() {
-    output.innerHTML = this.value;
-}
-
 // Add another wurcom unit field set when button is clicked
 function addWurcomUnit() {
     // Create a new fieldset element
@@ -99,6 +87,12 @@ function addWurcomUnit() {
     serialInput.maxLength = 12;
     serialInput.required = true;
 
+    // Add a delete button to the new fieldset
+    let deleteButton = document.createElement("div");
+    deleteButton.classList.add("delete-unit");
+    deleteButton.innerHTML = "&times;";
+    deleteButton.onclick = removeWurcomUnit;
+
     // Append the label and input to the fieldset
     newDiv1.appendChild(nameLabel);
     newDiv1.appendChild(nameInput);
@@ -108,6 +102,7 @@ function addWurcomUnit() {
     newDiv2.appendChild(serialInput);
     newDiv2.appendChild(typeLabel);
     newDiv2.appendChild(typeSelect);
+    newFieldset.appendChild(deleteButton);
 
     // Append the new fieldset to the form
     lastFieldset.insertAdjacentElement('afterend', newFieldset);
