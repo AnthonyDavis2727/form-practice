@@ -104,14 +104,17 @@ function addWurcomUnit() {
     newDiv2.appendChild(typeSelect);
     newFieldset.appendChild(deleteButton);
 
-    // Append the new fieldset to the form
+    // Append the new fieldset and horizontal line to the form
     lastFieldset.insertAdjacentElement('afterend', newFieldset);
+    lastFieldset.insertAdjacentElement('afterend', document.createElement("hr"));
 }
 
 // Remove the last wurcom unit fieldset when button is clicked
 function removeWurcomUnit() {
     let fieldsets = document.querySelectorAll("fieldset");
+    let hrElements = document.querySelectorAll("hr")
     if (fieldsets.length > 1) {
         fieldsets[fieldsets.length - 1].remove();
+        hrElements[hrElements.length - 1].remove();
     }
 }
