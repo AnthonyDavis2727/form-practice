@@ -118,3 +118,15 @@ function removeWurcomUnit() {
         hrElements[hrElements.length - 1].remove();
     }
 }
+
+const formModal = document.getElementById("modal");
+const openModalButton = document.getElementById("openModal");
+const closeModalButton = document.getElementById("closeModal");
+
+openModalButton.addEventListener("click", () => {
+    formModal.showModal();
+})
+
+closeModalButton.addEventListener("click", () => {
+    formModal.close();
+})
